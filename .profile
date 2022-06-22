@@ -26,6 +26,9 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# dotfiles
+alias dot-config='/usr/bin/git --git-dir=/home/james/.cfg/.git --work-tree=/home/james'
+
 # GPG
 alias gpg-kill=gpgconf --kill gpg-agent
 
@@ -33,16 +36,17 @@ alias gpg-kill=gpgconf --kill gpg-agent
 export ONEDRIVE_DOC=/mnt/c/Users/jb_xb/OneDrive/Documents/
 
 # WYBE
-fn-wybeinstall() {
-    [[ `basename $PWD` == "wybe" ]] && (make; sudo make install) \
-                                    || echo "Error installing Wybe"
-}
-alias wybeinstall="fn-wybeinstall"
+# fn-wybeinstall() {
+#     [[ `basename $PWD` == "wybe" ]] && (make; sudo make install) \
+#                                     || echo "Error installing Wybe"
+# }
+# alias wybeinstall="fn-wybeinstall"
+# 
+# fn-wyberun() {
+#     echo "Compiling $1"
+#     [[ $# -ge 2 ]] && echo "With arguments: ${@:2}"
+#     wybemk $1 ${@:2}
+#     [[ -x ./$1 && $? -eq 0 ]] && (echo "Attempting to run ./$1"; ./$1) || (echo "Cannot run ./$1")
+# }
+# alias wyberun="fn-wyberun"
 
-fn-wyberun() {
-    echo "Compiling $1"
-    [[ $# -ge 2 ]] && echo "With arguments: ${@:2}"
-    wybemk $1 ${@:2}
-    [[ -x ./$1 && $? -eq 0 ]] && (echo "Attempting to run ./$1"; ./$1) || (echo "Cannot run ./$1")
-}
-alias wyberun="fn-wyberun"

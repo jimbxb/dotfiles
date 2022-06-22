@@ -115,4 +115,4 @@ source $ZSH/oh-my-zsh.sh
 source ~/.profile
 
 export GPG_TTY=$TTY
-alias dot-config='/usr/bin/git --git-dir=/home/james/.cfg/.git --work-tree=/home/james'
+
